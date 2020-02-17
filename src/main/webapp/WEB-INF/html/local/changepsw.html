@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../webjars/bootstrap/4.4.1/css/bootstrap.css" >
+    <link rel="stylesheet" href="../resources/css/frontend/index/changepsw.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <title>修改密码</title>
+
+</head>
+<body>
+<form class="form-changepsw" id="myform">
+    <img class="mb-4" src="" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">修改密码</h1>
+    <label for="username" class="sr-only">用户名</label>
+    <input type="text"  class="form-control"   placeholder="用户名" required autofocus id="username" name="username">
+    <label for="oldpsw" class="sr-only" >旧密码</label>
+    <input type="password"  class="form-control"  placeholder="旧密码" required id="oldpsw" name="oldpsw">
+    <label for="newpsw" class="sr-only" >新密码</label>
+    <input type="password"  class="form-control"  placeholder="新密码" required id="newpsw" name="newpsw">
+    <label for="newpswcheck" class="sr-only" >确认新密码</label>
+    <input type="password"  class="form-control"  placeholder="确认新密码" required id="newpswcheck" name="newpswcheck">
+
+    <div class="form-group row" id="verifyPart" hidden>
+        <div class="row">
+            <i class="icon icon-form-email"></i>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-5 form-group">
+                <label for="j_captcha" >验证码</label>
+                <input id="j_captcha" class="form-control" name="j_captcha" type="text" placeholder="验证码" />
+            </div>
+            <div class="col-6">
+                <img id="captcha_img" alt="点击更换" title="点击更换" onclick="changeVerifyCode(this)" src="../Kaptcha"
+                     class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-danger" role="alert" hidden>
+
+    </div>
+    <div class="form-row justify-content-around">
+        <button type="button" class="btn btn-primary btn-lg col-4" id="submit">确认</button>
+        <button type="button" class="btn btn-danger  btn-lg col-4" id="back">返回</button>
+    </div>
+
+
+    <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+</form>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../webjars/jquery/3.4.1/jquery.js"></script>
+<script src="../webjars/popper.js/1.14.3/popper.js"></script>
+<script src="../webjars/bootstrap/4.4.1/js/bootstrap.js"></script>
+<script src="../webjars/jquery-validation/1.19.0/jquery.validate.js"></script>
+<script src="../webjars/jquery-validation/1.19.0/localization/messages_zh.js"></script>
+<script src="../resources/js/local/changepsw.js"></script>
+<script type='text/javascript'
+        src='../resources/js/common/common.js' charset='utf-8'></script>
+</body>
+</html>

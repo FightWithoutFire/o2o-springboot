@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fightwithoutfire.o2o.dao.PersonInfoDao">
+    <insert id="insertPersonInfo" parameterType="com.fightwithoutfire.o2o.entity.PersonInfo"
+            useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
+        INSERT
+        INTO
+        tb_person_info(name,enable_status,
+        <if test="customerFlag != null">customer_flag,</if>
+        <if test="shopOwnerFlag != null">shop_owner_flag,</if>
+       create_time,last_edit_time)
+        VALUES
+        (#{name},#{enableStatus},
+        <if test="customerFlag != null">#{customerFlag},</if>
+        <if test="shopOwnerFlag != null">#{shopOwnerFlag},</if>
+        #{createTime},#{lastEditTime})
+    </insert>
+    <select id="selectPersonInfoByUserId" resultType="com.fightwithoutfire.o2o.entity.PersonInfo">
+        select
+        user_id,
+        name,
+        customer_flag,
+        shop_owner_flag,
+        admin_flag
+        from tb_person_info
+    </select>
+</mapper>
